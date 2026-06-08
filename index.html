@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CC Gen - Random Credit Card Generator - Alyxstar</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" />
+  <style>
+    /* Custom Blue Color (#3674B5) */
+    .bg-custom-blue {
+      background-color: #3674B5;
+    }
+    .hover\:bg-custom-blue:hover {
+      background-color: #2c5f9a;
+    }
+    .focus\:bg-custom-blue:focus {
+      background-color: #214b7f;
+    }
+    
+    /* Base Styles */
+    a,button{background-color:transparent}body,h1,h4,h5,p,pre,ul{margin:0}.form-checkbox,.form-select{-webkit-print-color-adjust:exact;color-adjust:exact}.block,details,main{display:block}h1{font-size:2em}code,pre{font-size:1em}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}button,input,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}.overflow-auto,textarea{overflow:auto}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}textarea{resize:vertical}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}.hidden,[hidden],template{display:none}.form-checkbox,.inline-block{display:inline-block}button{background-image:none}button:focus{outline:dotted 1px;outline:-webkit-focus-ring-color auto 5px}ul{list-style:none;padding:0}html{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}.form-input,.form-select,.form-textarea{-webkit-appearance:none;-moz-appearance:none;border-color:#a0aec0;border-width:2px;border-radius:.25rem;font-size:1rem;line-height:1.5;box-shadow:none;background-color:#fff;font-weight:500}img{border-style:solid;max-width:100%;height:auto}input::-moz-placeholder,textarea::-moz-placeholder{color:#a0aec0}input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#a0aec0}input::-ms-input-placeholder,textarea::-ms-input-placeholder{color:#a0aec0}input::placeholder,textarea::placeholder{color:#a0aec0}.cursor-pointer,[role=button],button{cursor:pointer}h1,h4,h5{font-size:inherit;font-weight:inherit}button,input,select,textarea{padding:0;line-height:inherit;color:inherit}code,pre{font-family:SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}img,svg{display:block;vertical-align:middle}.container,.w-full{width:100%}.form-input,.form-textarea{appearance:none;padding:.5rem .75rem}.form-input::-moz-placeholder{color:#a0aec0;opacity:1}.form-input:-ms-input-placeholder{color:#a0aec0;opacity:1}.form-input::-ms-input-placeholder{color:#a0aec0;opacity:1}.form-input::placeholder{color:#a0aec0;opacity:1}.form-input:focus,.form-select:focus,.form-textarea:focus{outline:0;box-shadow:none;border-color:#718096}.form-textarea::-moz-placeholder{color:#a0aec0;opacity:1}.form-textarea:-ms-input-placeholder{color:#a0aec0;opacity:1}.form-textarea::-ms-input-placeholder{color:#a0aec0;opacity:1}.form-textarea::placeholder{color:#a0aec0;opacity:1}.form-select{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%234a5568' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z'/%3E%3C/svg%3E");appearance:none;background-repeat:no-repeat;padding:.5rem 2.5rem .5rem .75rem;background-position:right .5rem center;background-size:1.5em 1.5em}.form-select::-ms-expand{color:#a0aec0;border:none}.form-checkbox,.rounded{border-radius:.25rem}@media print and (-ms-high-contrast:active),print and (-ms-high-contrast:none){.form-select{padding-right:.75rem}}.form-checkbox{-webkit-appearance:none;-moz-appearance:none;appearance:none;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;flex-shrink:0;height:1em;width:1em;color:#4299e1;background-color:#fff;border-color:#e2e8f0;border-width:1px;box-shadow:none}.form-checkbox:checked{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:50%;background-repeat:no-repeat}@media not print{.form-select::-ms-expand{display:none}.form-checkbox::-ms-check{border-width:1px;color:transparent;background:inherit;border-color:inherit;border-radius:inherit}}.form-checkbox:focus{outline:0;box-shadow:none;border-color:#63b3ed}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.bg-gray-500,.hover\:bg-gray-500:hover{--bg-opacity:1;background-color:#a0aec0;background-color:rgba(160,174,192,var(--bg-opacity))}.bg-gray-600,.focus\:bg-gray-600:focus{--bg-opacity:1;background-color:#718096;background-color:rgba(113,128,150,var(--bg-opacity))}.bg-red-200{--bg-opacity:1;background-color:#fed7d7;background-color:rgba(254,215,215,var(--bg-opacity))}.bg-teal-200{--bg-opacity:1;background-color:#b2f5ea;background-color:rgba(178,245,234,var(--bg-opacity))}.bg-teal-500,.hover\:bg-teal-500:hover{--bg-opacity:1;background-color:#38b2ac;background-color:rgba(56,178,172,var(--bg-opacity))}.bg-teal-600{--bg-opacity:1;background-color:#319795;background-color:rgba(49,151,149,var(--bg-opacity))}.bg-teal-800{--bg-opacity:1;background-color:#285e61;background-color:rgba(40,94,97,var(--bg-opacity))}.bg-teal-900,.hover\:bg-teal-900:hover{--bg-opacity:1;background-color:#234e52;background-color:rgba(35,78,82,var(--bg-opacity))}.focus\:bg-gray-700:focus{--bg-opacity:1;background-color:#4a5568;background-color:rgba(74,85,104,var(--bg-opacity))}.focus\:bg-teal-700:focus{--bg-opacity:1;background-color:#2c7a7b;background-color:rgba(44,122,123,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-gray-500{--border-opacity:1;border-color:#a0aec0;border-color:rgba(160,174,192,var(--border-opacity))}.border-red-400{--border-opacity:1;border-color:#fc8181;border-color:rgba(252,129,129,var(--border-opacity))}.rounded-lg{border-radius:.5rem}.rounded-full{border-radius:9999px}.border-2{border-width:2px}.border{border-width:1px}.cursor-wait{cursor:wait}.cursor-not-allowed{cursor:not-allowed}.flex{display:flex}.inline-flex{display:inline-flex}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.font-primary{font-family:Poppins,sans-serif}.font-fallback{font-family:sans-serif}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.h-4{height:1rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-full{height:100%}.text-xs{font-size:.75rem}.text-sm{font-size:.875rem}.text-base{font-size:1rem}.text-lg{font-size:1.125rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.875rem}.leading-relaxed{line-height:1.625}.list-disc{list-style-type:disc}.mx-0{margin-left:0;margin-right:0}.my-2{margin-top:.5rem;margin-bottom:.5rem}.mb-3,.my-3{margin-bottom:.75rem}.mx-2{margin-left:.5rem;margin-right:.5rem}.my-3{margin-top:.75rem}.mx-auto{margin-left:auto;margin-right:auto}.-mx-1{margin-left:-.25rem;margin-right:-.25rem}.-mx-2{margin-left:-.5rem;margin-right:-.5rem}.mt-0{margin-top:0}.ml-0{margin-left:0}.mt-1{margin-top:.25rem}.mr-1{margin-right:.25rem}.mt-2{margin-top:.5rem}.ml-2{margin-left:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-10{margin-top:2.5rem}.mr-10{margin-right:2.5rem}.mr-px{margin-right:1px}.mb-px{margin-bottom:1px}.-mt-1{margin-top:-.25rem}.-mt-3{margin-top:-.75rem}.-mt-20{margin-top:-5rem}.min-h-70-screen{min-height:70vh}.opacity-50{opacity:.5}.focus\:outline-none:focus{outline:0}.p-2{padding:.5rem}.p-3{padding:.75rem}.py-0{padding-top:0;padding-bottom:0}.py-1{padding-top:.25rem;padding-bottom:.25rem}.px-1{padding-left:.25rem;padding-right:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.px-2{padding-left:.5rem;padding-right:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.px-8{padding-left:2rem;padding-right:2rem}.container,.pl-5{padding-left:1.25rem}.py-20{padding-top:5rem;padding-bottom:5rem}.pt-1{padding-top:.25rem}.pb-10{padding-bottom:2.5rem}.pt-32{padding-top:8rem}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.top-0{top:0}.right-0{right:0}.bottom-0{bottom:0}.resize-none{resize:none}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)}.fill-current{fill:currentColor}.text-center{text-align:center}.text-right{text-align:right}.hover\:text-white:hover,.text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-800{--text-opacity:1;color:#2d3748;color:rgba(45,55,72,var(--text-opacity))}.text-red-500{--text-opacity:1;color:#f56565;color:rgba(245,101,101,var(--text-opacity))}.text-teal-200{--text-opacity:1;color:#b2f5ea;color:rgba(178,245,234,var(--text-opacity))}.hover\:text-teal-500:hover,.text-teal-500{--text-opacity:1;color:#38b2ac;color:rgba(56,178,172,var(--text-opacity))}.text-teal-600{--text-opacity:1;color:#319795;color:rgba(49,151,149,var(--text-opacity))}.text-teal-700{--text-opacity:1;color:#2c7a7b;color:rgba(44,122,123,var(--text-opacity))}.uppercase{text-transform:uppercase}.hover\:underline:hover,.underline{text-decoration:underline}.hover\:no-underline:hover{text-decoration:none}.tracking-wide{letter-spacing:.025em}.visible{visibility:visible}.invisible{visibility:hidden}.w-4{width:1rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-10{width:2.5rem}.w-24{width:6rem}.w-32{width:8rem}.z-50{z-index:50}.transform{--transform-translate-x:0;--transform-translate-y:0;--transform-rotate:0;--transform-skew-x:0;--transform-skew-y:0;--transform-scale-x:1;--transform-scale-y:1;transform:translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y))}.container{margin-left:auto;margin-right:auto;padding-right:1.25rem}.transition{transition:.2s ease-in-out}.form-input{height:46px}@media (min-width:640px){.container{max-width:640px}.sm\:inline-block{display:inline-block}.sm\:h-full{height:100%}.sm\:mt-0{margin-top:0}.sm\:w-auto{width:auto}.sm\:w-1\/2{width:50%}}@media (min-width:768px){.container{max-width:768px}.md\:mt-0{margin-top:0}.md\:w-1\/2{width:50%}}@media (min-width:1024px){.container{max-width:1024px}.lg\:ml-1,.lg\:mx-1{margin-left:.25rem}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:mx-1{margin-right:.25rem}.lg\:mt-0{margin-top:0}.lg\:w-auto{width:auto}.lg\:w-1\/2{width:50%}}@media (min-width:1280px){.container{max-width:1280px}.xl\:w-2\/5{width:40%}}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#fff;z-index:999999}
+
+    /* Dark Glass Theme */
+    body {
+      background: radial-gradient(circle at 20% 30%, #14161f, #0a0b10);
+      font-family: 'Poppins', sans-serif;
+      color: #eef2ff;
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .bg-custom-blue {
+      background: rgba(18, 22, 35, 0.7) !important;
+      backdrop-filter: blur(14px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .form-input, .form-select, .form-textarea {
+      background: rgba(15, 18, 28, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 20px !important;
+      color: #f0f3fc !important;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: #5f8eff !important;
+      background: rgba(20, 24, 38, 0.98) !important;
+    }
+    .form-checkbox {
+      background-color: rgba(15, 18, 28, 0.8);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .block.cursor-pointer.relative span {
+      background: rgba(10, 14, 22, 0.9) !important;
+      color: #b9c7ff !important;
+      border-radius: 20px;
+    }
+    #submit, .wait-loading button {
+      background: linear-gradient(105deg, #2a3f6e, #1f2b47) !important;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 32px !important;
+    }
+    #submit:hover {
+      background: linear-gradient(105deg, #3b5790, #273753) !important;
+      transform: translateY(-2px);
+    }
+    .show-result {
+      background: rgba(10, 12, 21, 0.85) !important;
+      border-radius: 20px !important;
+      font-family: monospace;
+    }
+    .btn-clip {
+      background: rgba(30, 34, 50, 0.9) !important;
+      border-radius: 30px !important;
+    }
+    .flex-wrap.-mx-2.mt-5 .w-full.sm\:w-1\/2.px-2 > form,
+    .flex-wrap.-mx-2.mt-5 .w-full.sm\:w-1\/2.px-2 > .sm\:h-full {
+      background: rgba(22, 26, 38, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 1.5rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Header & Footer */
+    .glass-header {
+      background: rgba(18, 22, 35, 0.7);
+      backdrop-filter: blur(14px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 50;
+      padding: 0.75rem 0;
+    }
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-button {
+      background: rgba(30, 34, 50, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 40px;
+      padding: 0.45rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #eef2ff;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-button:hover {
+      background: rgba(95, 142, 255, 0.3);
+      border-color: #5f8eff;
+      transform: translateY(-1px);
+    }
+    footer {
+      background: rgba(10, 12, 20, 0.7);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.2rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #b9c7ff;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #cbd5f0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.2s;
+      border-bottom: 1px dotted transparent;
+    }
+    .footer-links a:hover {
+      border-bottom-color: #5f8eff;
+      color: white;
+    }
+    .copyright {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+    .hidden-section {
+      display: none;
+    }
+    /* fixed back arrow overlap – added left padding to content container */
+    .page-content {
+      color: #eef2ff;
+      font-size: 1rem;
+      position: relative;
+      padding-left: 3.5rem;    /* space for the arrow on the left */
+      padding-top: 0.5rem;
+    }
+    .back-home-btn {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(30, 34, 50, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 40px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #eef2ff;
+      cursor: pointer;
+      transition: 0.2s;
+      z-index: 5;
+    }
+    .back-home-btn:hover {
+      background: rgba(95, 142, 255, 0.3);
+      border-color: #5f8eff;
+      transform: scale(1.02);
+    }
+    .page-content h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, #ffffff, #b9c7ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-top: 0;
+    }
+    .page-content p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      color: #cbd5f0;
+    }
+    .telegram-link {
+      display: inline-block;
+      background: rgba(95, 142, 255, 0.2);
+      border: 1px solid rgba(95, 142, 255, 0.5);
+      border-radius: 40px;
+      padding: 0.6rem 1.5rem;
+      margin-top: 0.8rem;
+      color: #b9c7ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .telegram-link:hover {
+      background: rgba(95, 142, 255, 0.4);
+      border-color: #5f8eff;
+      color: white;
+    }
+    @media (max-width: 720px) {
+      .container { padding: 0 1.2rem; }
+      .glass-card { padding: 1.4rem; }
+      .page-content { padding-left: 2rem; }
+      .back-home-btn { width: 32px; height: 32px; top: 1rem; left: 1rem; font-size: 1rem; }
+    }
+  </style>
+  <meta name="theme-color" content="#3674B5" />
+</head>
+<body>
+<div data-server-rendered="true" id="__nuxt">
+ <div id="__layout">
+  <div class="font-primary">
+    <div class="glass-header">
+      <div class="container">
+        <div class="header-flex">
+          <a href="https://t.me/cc_gen_testbot" target="_blank">
+            <img src="cc_img_01.jpg" alt="Logo" class="logo-img">
+          </a>
+          <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Generate CC</a>
+            <a href="lorem.html" class="nav-button">Generate Lorem</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main id="main" class="pb-10 pt-32 text-gray-600">
+      <div class="container min-h-70-screen">
+        <!-- CREDIT CARD GENERATOR SECTION -->
+        <div id="ccGeneratorSection" class="min-h-70-screen">
+          <div class="text-center">
+            <a href="https://t.me/cc_gen_testbot" target="_blank">
+              <h1 class="text-3xl font-bold text-gray-700">Credit Card Generator</h1>
+            </a>
+            <p class="my-3">
+              Jack the 𝚛̷𝚒̷𝚙̷𝚙̷𝚎̷𝚛̷  credit card generator, instantly producing valid credit card numbers. Ideal for testing purposes in the technology field, these algorithm-generated cards offer a convenient solution for various verification needs, for educational purposes only.
+            </p>
+          </div>
+          <div class="flex flex-wrap -mx-2 mt-5 text-gray-700">
+            <div class="w-full sm:w-1/2 px-2">
+              <form id="codehap">
+                <input type="hidden" name="type" value="3" />
+                <div class="mt-6"><label class="block cursor-pointer relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">CUSTOM FORMAT</span><input placeholder="410039003911xxxx|09|2099|rnd" name="custom_format" class="form-input block w-full mb-3"/></label></div>
+                <div><label class="block cursor-pointer relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">BIN</span><input placeholder="410039xxxxxxxxxx" name="bin" class="form-input block w-full" /></label></div>
+                <div class="flex -mx-2 items-center"><div class="px-2 mt-6"><label class="flex items-center cursor-pointer"> <input type="checkbox" name="date" class="form-checkbox text-teal-700 cursor-pointer" checked /> <span class="ml-2 text-xs font-medium">DATE</span> </label></div><div class="mt-6 w-full sm:w-1/2 px-2"><label class="block cursor-pointer relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">MONTH</span><select name="s_date" class="form-select block w-full"><option value="">Random</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label></div><div class="mt-6 w-full sm:w-1/2 px-2"><label class="block cursor-pointer relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">YEAR</span><select name="year" class="form-select block w-full"><option value="">Random</option><option value="2099">2099</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option></select></label></div></div>
+                <div class="flex -mx-2 items-center"><div class="px-2 mt-6"><label class="flex items-center cursor-pointer"> <input name="csv" type="checkbox" class="form-checkbox text-teal-700 cursor-pointer" checked /> <span class="ml-2 text-xs font-medium">CVV</span> </label></div><div class="mt-6 w-full sm:w-1/2 px-2"><label class="block cursor-pointer relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">CVV</span><input name="s_csv" placeholder="Leave blank to randomize" class="form-input block w-full" /></label></div><div class="mt-6 w-full sm:w-1/2 px-2"><label class="block cursor-pointer relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">QUANTITY</span><input name="number" value="10" type="text" class="form-input block w-full" /></label></div></div>
+                <div class="mt-6"><label class="block cursor-pointer relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">FORMAT</span><select name="format" class="form-select block w-full"><option value="checker">CHECKER</option><option value="json">JSON</option><option value="pipe">PIPE</option></select></label></div>
+                <div class="mt-6"><button type="submit" id="submit" class="flex items-center justify-center shadow-md bg-custom-blue text-white font-medium w-full rounded py-3 hover:bg-teal-500 focus:bg-teal-700 focus:outline-none">.GEN</button><div class="wait-loading mt-2" style="display: none;"><button type="submit" class="flex items-center justify-center shadow-md bg-teal-600 text-white font-medium w-full rounded py-3"><svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 128 128"><g><path fill="white" d="M116.7 66.28a52.86 52.86 0 0 1-1 8.18l9.8 7.57-1.78 4.67-1.77 4.67-12.36-.82a52.87 52.87 0 0 1-4.7 6.7L110 108.5l-3.75 3.3-3.75 3.32L92 108.67a52.6 52.6 0 0 1-7.45 3.9l-.66 12.3-4.87 1.2-4.86 1.2-6.38-10.66q-1.9.2-3.88.2-2.15 0-4.25-.14l-6.3 10.64-4.84-1.2-4.85-1.2-.7-12.43a52.6 52.6 0 0 1-6.7-3.5l-10.6 6.64-3.75-3.3-3.76-3.3 5.05-11.4a52.88 52.88 0 0 1-4.73-6.73l-12.34.9-1.8-4.66-1.8-4.67 9.7-7.67a52.8 52.8 0 0 1-1-8.05l-11.4-5 .56-4.95.54-4.97 12.26-2.3a52.37 52.37 0 0 1 2.94-7.83L8.4 32l2.8-4.14 2.8-4.14 12 3.68a53.06 53.06 0 0 1 6-5.33L29.57 9.8l4.4-2.37 4.43-2.35 8.95 8.86a52.4 52.4 0 0 1 8-1.98L59 0h10l3.66 11.96a52.4 52.4 0 0 1 7.8 1.9L89.26 5l4.42 2.3 4.43 2.34-2.3 12.27a52.98 52.98 0 0 1 6.2 5.5l11.9-3.7 2.9 4.1 2.84 4.1-7.8 9.8a52.34 52.34 0 0 1 2.86 7.5l12.3 2.17.6 4.96.57 4.95zM41 64a23 23 0 1 0 23-23 23 23 0 0 0-23 23z"/><animateTransform attributeName="transform" type="rotate" from="0 64 64" to="27.69 64 64" dur="600ms" repeatCount="indefinite"></animateTransform></g></svg> In Progress..</button></div></div>
+              </form>
+            </div>
+            <div class="w-full sm:w-1/2 px-2"><div class="sm:h-full mt-6 sm:mt-0"><label class="block cursor-pointer relative h-full"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">RESULT</span><textarea id="result" rows="5" placeholder="xxxxxxxxxx" class="show-result form-textarea block w-full h-full resize-none font-fallback font-bold tracking-wide"></textarea><button type="button" class="btn-clip bg-gray-500 px-2 py-1 absolute bottom-0 right-0 mb-px mr-px focus:outline-none"><span class="tooltip invisible absolute top-0 right-0 mr-10 -mt-1 w-32 py-1 text-center block text-white text-xs rounded-full bg-gray-600">Copy to clipboard</span><svg viewBox="0 0 14 14" class="fill-current w-4 h-4 text-white"><path d="M3.50004 1.16666H7.00004V4.66666C7.00004 5.30833 7.52504 5.83333 8.16671 5.83333H11.6667V11.6667C11.6667 11.9761 11.5438 12.2728 11.325 12.4916C11.1062 12.7104 10.8095 12.8333 10.5 12.8333H3.50004C3.19062 12.8333 2.89388 12.7104 2.67508 12.4916C2.45629 12.2728 2.33337 11.9761 2.33337 11.6667V2.33333C2.33337 1.69166 2.85837 1.16666 3.50004 1.16666ZM4.66671 7.58333C4.512 7.58333 4.36362 7.64479 4.25423 7.75419C4.14483 7.86358 4.08337 8.01195 4.08337 8.16666C4.08337 8.32137 4.14483 8.46975 4.25423 8.57914C4.36362 8.68854 4.512 8.75 4.66671 8.75H9.33337C9.48808 8.75 9.63646 8.68854 9.74585 8.57914C9.85525 8.46975 9.91671 8.32137 9.91671 8.16666C9.91671 8.01195 9.85525 7.86358 9.74585 7.75419C9.63646 7.64479 9.48808 7.58333 9.33337 7.58333H4.66671ZM4.66671 9.91667C4.512 9.91667 4.36362 9.97812 4.25423 10.0875C4.14483 10.1969 4.08337 10.3453 4.08337 10.5C4.08337 10.6547 4.14483 10.8031 4.25423 10.9125C4.36362 11.0219 4.512 11.0833 4.66671 11.0833H7.00004C7.15475 11.0833 7.30312 11.0219 7.41252 10.9125C7.52191 10.8031 7.58337 10.6547 7.58337 10.5C7.58337 10.3453 7.52191 10.1969 7.41252 10.0875C7.30312 9.97812 7.15475 9.91667 7.00004 9.91667H4.66671Z"/><path d="M8.16663 1.16666L11.6666 4.66666H8.16663V1.16666Z"></path></svg></button></label></div></div>
+          </div>
+        </div>
+
+        <!-- ABOUT, CONTACT, PRIVACY PAGES (fixed arrow spacing) -->
+        <div id="aboutPage" class="hidden-section">
+          <div class="glass-card" style="background: rgba(22, 26, 38, 0.65); backdrop-filter: blur(12px); border-radius: 36px; border: 1px solid rgba(255,255,255,0.1); padding: 2rem 2.5rem; position: relative;">
+            <div class="back-home-btn" data-back-home>←</div>
+            <div class="page-content">
+              <h2>About v2.0.0</h2>
+              <p>jack the ripper is a multi-purpose random data generator for prototyping / testing in the field of programming and development.</p>
+              <p>As of now, jack the ripper offers lorem ipsum generator, and random test credit card numbers generator.</p>
+              <p>The lorem ipsum generator is just a dummy text placeholder that you can use for your design mockups, graphics and prototyping.</p>
+              <p>The random test credit card numbers generator uses the Luhn algorithm. These credit card numbers are not actual issued credit cards and has no value in real life. This service does not generate credit card numbers that has real money and doesn't belong to any card holder.</p>
+              <p>You can generate bulk credit card numbers in different format that you require. Test them on your ecommerce store or whatever payment gateway that you're using for testing and validating credit card numbers.</p>
+            </div>
+          </div>
+        </div>
+        <div id="contactPage" class="hidden-section">
+          <div class="glass-card" style="background: rgba(22, 26, 38, 0.65); backdrop-filter: blur(12px); border-radius: 36px; border: 1px solid rgba(255,255,255,0.1); padding: 2rem 2.5rem; position: relative;">
+            <div class="back-home-btn" data-back-home>←</div>
+            <div class="page-content">
+              <h2>Contact</h2>
+              <p>You can reach us directly via Telegram for support, suggestions, or collaborations.</p>
+              <a href="https://t.me/cc_gen_testbot" target="_blank" class="telegram-link">📱 Join us on Telegram</a>
+            </div>
+          </div>
+        </div>
+        <div id="privacyPage" class="hidden-section">
+          <div class="glass-card" style="background: rgba(22, 26, 38, 0.65); backdrop-filter: blur(12px); border-radius: 36px; border: 1px solid rgba(255,255,255,0.1); padding: 2rem 2.5rem; position: relative;">
+            <div class="back-home-btn" data-back-home>←</div>
+            <div class="page-content">
+              <h2>Privacy Policy</h2>
+              <p><strong>Information that this website collects</strong><br> jack the ripper only has access to/collect information that you voluntarily give via email or other direct contact from you. jack the ripper ensures that the gathered data will not be shared to anyone and will only use your information to respond to you. jack the ripper will not share your information with any third party outside of this service. jack the ripper may contact you via email in the future to inform you about new features/services, changes/updates to its privacy policy. jack the ripper may also gather some data via Google Analytics (a third-party service provider to monitor and analyze the use this website) to learn from which browser and device you're accessing the website, if it's in desktop, mobile or tablet.</p>
+              <p><strong>Links to other sites</strong><br> This website may contain links of advertisements to other sites that are not operated inside jack the ripper. If you click a third party link, you will be directed to that third party's site. jack the ripper strongly advise you to review the privacy policy of every site you visit. jack the ripper have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+              <p><strong>Disclosure Of Data</strong><br> jack the ripper does not support, promote or encourage illegal/fraud activities of any kind. jack the ripper will cooperate with the law enforcement or government authority to assist and disclose identifiable information of anyone that misuses the services that this website offers. jack the ripper have the right to disclose information to third parties where a complaint arises concerning your use of this website's service.</p>
+              <p><strong>Updates</strong><br> This privacy policy may change from time to time and all updates will be posted on this page.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <a href="#" id="footerAboutCC">About</a>
+          <a href="#" id="footerContactCC">Contact</a>
+          <a href="#" id="footerPrivacyCC">Privacy Policy</a>
+        </div>
+        <div class="copyright">Copyright © zahen - 2025</div>
+      </div>
+    </footer>
+  </div>
+ </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+  // CC GENERATION LOGIC (unchanged)
+  function generateCardNumber(input) {
+      if (input.includes('xxxx')) {
+          while (input.includes('xxxx')) {
+              input = input.replace('xxxx', Math.floor(1000 + Math.random() * 9000));
+          }
+          return input;
+      }
+      let desiredLength = input.startsWith('34') || input.startsWith('37') ? 15 : 16;
+      while (input.length < desiredLength - 1) {
+          input += Math.floor(Math.random() * 10);
+      }
+      let sum = 0;
+      let alternate = false;
+      for (let i = input.length - 1; i >= 0; i--) {
+          let n = parseInt(input.charAt(i));
+          if (alternate) {
+              n *= 2;
+              if (n > 9) n = (n % 10) + 1;
+          }
+          sum += n;
+          alternate = !alternate;
+      }
+      return input + ((10 - (sum % 10)) % 10);
+  }
+  function generateCVV(cardNumber) {
+      return cardNumber.startsWith('34') || cardNumber.startsWith('37') ? Math.floor(Math.random() * 9000) + 1000 : Math.floor(Math.random() * 900) + 100;
+  }
+  $(document).ready(function() {
+    $('#codehap').submit(function(e) {
+      e.preventDefault();
+      $('.wait-loading').show();
+      $('#submit').hide();
+      var customFormat = $('input[name="custom_format"]').val();
+      var bin = $('input[name="bin"]').val();
+      var quantity = parseInt($('input[name="number"]').val());
+      var includeDate = $('input[name="date"]').is(':checked');
+      var includeCSV = $('input[name="csv"]').is(':checked');
+      var month = $('select[name="s_date"]').val();
+      var year = $('select[name="year"]').val();
+      var csv = $('input[name="s_csv"]').val();
+      var format = $('select[name="format"]').val();
+      var cards = [];
+      for (var i = 0; i < quantity; i++) {
+        var card = {};
+        if (customFormat) {
+          let parts = customFormat.split('|');
+          if (parts.length >= 4) {
+            card.number = generateCardNumber(parts[0]);
+            card.month = parts[1] === 'rnd' ? (Math.floor(Math.random() * 12) + 1).toString().padStart(2, '0') : parts[1];
+            card.year = parts[2] === 'rnd' ? Math.floor(Math.random() * 10) + 2024 : parts[2];
+            card.cvv = parts[3] === 'rnd' ? generateCVV(card.number) : parts[3];
+          }
+        } else {
+          card.number = generateCardNumber(bin);
+          if (includeDate) {
+            card.month = month ? parseInt(month) : Math.floor(Math.random() * 12) + 1;
+            card.year = year ? parseInt(year) : Math.floor(Math.random() * 9) + 2024;
+          }
+          if (includeCSV) {
+            card.cvv = csv ? csv : generateCVV(card.number);
+          }
+        }
+        Object.keys(card).forEach(key => card[key] === undefined && delete card[key]);
+        cards.push(card);
+      }
+      var result = '';
+      switch (format) {
+        case 'pipe': result = cards.map(c => `${c.number}|${c.month||''}|${c.year||''}|${c.cvv||''}`).join('\n'); break;
+        case 'checker': result = cards.map(c => { if(c.month) c.month = c.month.toString().padStart(2,'0'); return `${c.number}|${c.month||''}|${c.year||''}|${c.cvv||''}`; }).join('\n'); break;
+        case 'json': result = JSON.stringify(cards, null, 2); break;
+      }
+      $('#result').val(result);
+      $('.wait-loading').hide();
+      $('#submit').show();
+    });
+    $('.btn-clip').click(function() { var resultText = $('#result').val(); navigator.clipboard.writeText(resultText).then(function() { $('.tooltip').removeClass('invisible').addClass('visible'); setTimeout(function() { $('.tooltip').removeClass('visible').addClass('invisible'); }, 2000); }); });
+
+    // Page switching for footer and back button
+    function showSection(sectionId) {
+      $('#ccGeneratorSection, #aboutPage, #contactPage, #privacyPage').addClass('hidden-section');
+      $(sectionId).removeClass('hidden-section');
+    }
+    $('#footerAboutCC').click(function(e){ e.preventDefault(); showSection('#aboutPage'); });
+    $('#footerContactCC').click(function(e){ e.preventDefault(); showSection('#contactPage'); });
+    $('#footerPrivacyCC').click(function(e){ e.preventDefault(); showSection('#privacyPage'); });
+    $(document).on('click', '[data-back-home]', function(e) { e.preventDefault(); showSection('#ccGeneratorSection'); });
+  });
+</script>
+</body>
+</html>
